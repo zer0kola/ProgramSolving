@@ -38,9 +38,9 @@ public class Main {
 
     static void DFS(int node) {
         System.out.print(node + " ");
-        visited[node] = true; // 시작점은 방문했다고 표시
+        visited[node] = true; // 이 정점은 방문했다고 표시
         for (int i : lists[node]) { // 이 정점에 연결된 요소들 모두 탐색
-            if (!visited[i]) { // i번째를 방문하지 않았으면 다시 DFS
+            if (!visited[i]) { // i번째 정점을 방문하지 않았으면 다시 DFS
                 DFS(i);
             }
         }
@@ -55,8 +55,8 @@ public class Main {
             int currentNode = queue.poll(); // 큐에서 값을 빼옴
             System.out.print(currentNode + " ");
             for (int i : lists[currentNode]) { // 이 정점에 연결된 요소들 모두 탐색
-                if (!visited[i]) { // 방문하지 않았으면
-                    visited[i] = true;
+                if (!visited[i]) { // i번째 정점을 방문하지 않았으면
+                    visited[i] = true; // 이 정점은 방문했다고 표시
                     queue.add(i); // 순서대로 큐에 삽입
                 }
             }
